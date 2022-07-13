@@ -1,48 +1,48 @@
 import { IsNotEmpty, IsNumber, IsOptional, IsString, Max, MaxLength, Min, MinLength } from 'class-validator'
 
 export class CreateBookDto {
-    @IsNotEmpty()
     @IsString()
     @MinLength(9)
     @MaxLength(10)
+    @IsNotEmpty()
     id:string;
 
-    @IsNotEmpty()
     @IsString()
     @MinLength(2)
     @MaxLength(50)
+    @IsNotEmpty()
     name:string;
 
-    @IsNotEmpty()
     @IsString()
     @MinLength(2)
     @MaxLength(50)
+    @IsNotEmpty()
     lastname:string;
 
-    @IsNotEmpty()
     @IsNumber()
     @Min(18)
     @Max(100)
+    @IsNotEmpty()
     age:number;
 
-    @IsNotEmpty()
     @IsString()
     @MinLength(9)
     @MaxLength(20)
+    @IsNotEmpty()
     phoneNumber:string;
 
-    @IsNotEmpty()
     @IsString()
+    @IsNotEmpty()
     startDate:string;
 
-    @IsNotEmpty()
     @IsString()
+    @IsNotEmpty()
     endDate:string;
 
-    @IsNotEmpty()
     @IsString()
     @MinLength(6)
     @MaxLength(15)
+    @IsNotEmpty()
     houseId:string;
 
     @IsString()

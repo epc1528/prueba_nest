@@ -10,12 +10,15 @@ import { ResponseInterceptor } from './config/interceptors/response';
 async function bootstrap() {
   const logger = new LoggerService();
   const app = await NestFactory.create(AppModule);
+  
   app.useGlobalInterceptors(
     new ResponseInterceptor(),
     new TimeoutInterceptor(),
   );
   middlewares(app);
-  app.useGlobalPipes(new ValidationPipe());
+  app.useGlobalPipes(new ValidationPipe({
+    stopAtFirstError:true,
+  }));
   await app.listen(port);
 }
 bootstrap();
